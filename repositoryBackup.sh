@@ -32,4 +32,6 @@ echo Backup ${backup} commmitted to the local git repository
 git push url -all #?
 #get repository name from url=repository
 #dirname command gets directory name off a path
+#s=${url##*/}
+#repository=$(echo ${s%.*}
 echo Backup ${backup} pushed to the remote git repository ${repository}
