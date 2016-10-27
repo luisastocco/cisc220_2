@@ -7,21 +7,19 @@
 #crontab -e vim
 #00 01 * * * >> backsupLog #maybe decompress before sending to file?
 
-#input for path
-read -p-r "Enter the path to the repository folder, hit return to end:" path
-#input for url
-read -p-r "Enter the github URL, hit return to end:" url
-#input for username
-read -p "Enter your github username, hit return to end:" username
-#input for password
-read -p "Enter your github password, hit return to end:" -s pass
+#Stores arguments in variables
+folder=$1
+gitURL=$2
+gitUser=$3
+gitPass=$4
+date=$(date +%Y%m%d%H)
 
 #if not a backup file
 #access all files in directory and sub-directories, pipe to tar commans
 #access current date and time
 #backup=backupYYYYMMDDHH.tgz
 #compress all files into backup
-| tar czvf backup
+tar czvf backup$date
 echo Back up ${backup} created successfully!
 
 #commit backup to local repository
