@@ -1,0 +1,16 @@
+#!/bin/bash
+
+#In order to find the domain name I used nslookup, and piped the output to the
+#file. Then in order to store just the name of the sub-domain, I was thinking
+#if there is a command that can target a certain line, or find the characters
+#we are looking for
+
+
+Server:		192.168.2.1
+Address:	192.168.2.1#53
+
+Non-authoritative answer:
+3.1.15.130.in-addr.arpa	name = capital.cs.queensu.ca.
+
+Authoritative answers can be found from:
+
