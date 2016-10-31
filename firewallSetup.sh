@@ -7,7 +7,7 @@
 iptables --flush INPUT ; iptables --flush FORWARD ; iptables --flush OUTPUT
 
 #Enable ssh only from computers in the range and netmask /16
-echo sshd : ALL >> /etc/hosts.deny ; echo sshd : 130.15.{0..255}.{0..255} >> /etc/hosts.allow #not sure if i can write into it like this
+echo "sshd : ALL" >> /etc/hosts.deny ; echo "sshd : 130.15.{0..255}.{0..255}" >> /etc/hosts.allow #not sure if i can write into it like this
 
 #Enable ssh from computers in any private network
 for ip in *.*.*.*
