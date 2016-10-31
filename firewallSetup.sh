@@ -13,7 +13,7 @@ echo "sshd : ALL" >> /etc/hosts.deny ; echo "sshd : 130.15.{0..255}.{0..255}" >>
 for ip in *.*.*.*
 do
 	if [[ ip==192.168.{0.255.{0.255} || ip==172.{16..31}.{0..255}.{0..255} || ip==10.{0..255}.{0.255}.{0.255} ]] ; then
-	echo sshd : ip >> /etc/hosts.allow #not sure if i can write onto this file like this
+	echo "sshd : $ip" >> /etc/hosts.allow #not sure if i can write onto this file like this
 	fi
 done
 
