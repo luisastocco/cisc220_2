@@ -2,7 +2,6 @@
 
 #Luisa Aimoli 10169687
 #Braedan Robinson 10188414
-#Question 5 Assignment 2
 #Question 1 for Assignment 2
 #Draws a tree of the active processes showing their parent until it reaches the init daemon [systemd]
 
