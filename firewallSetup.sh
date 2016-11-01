@@ -1,5 +1,7 @@
-i#!/bin/bash
+#i!/bin/bash
 
+#Luisa Aimoli 10169687
+#Braedan Robinson 10188414
 #Question 5 Assignment 2
 #Adds firewall rules
 #PS. First two functions write directly to files!
