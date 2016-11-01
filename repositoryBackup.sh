@@ -2,7 +2,6 @@
 
 #Luisa Aimoli 10169687
 #Braedan Robinson 10188414
-#Question 5 Assignment 2
 #Question 2 for Assignment 2
 #**Did not know how to redirect output when pushing the files**
 #Assumes the user's remote repository has already been pulled to the local repository
