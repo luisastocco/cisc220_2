@@ -11,7 +11,11 @@
 #PPID:
 #STARTED:
 #by:
+pstree > pstree.txt
+while read p; do
+   echo $p;# echo -n ps axo pid,ppid,start,user;
 
+done<pstree.txt
 #ps axo p,ppid,start,user
 # --sort PID
 #til it reaches init=1 and PPID=0
