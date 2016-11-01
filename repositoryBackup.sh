@@ -1,7 +1,9 @@
 #!/bin/bash
 
 #Question 2 for Assignment 2
-#Backs up all the file sin the repository except previous backup files
+#**Did not know how to redirect output when pushing the files**
+#Assumes the user's remote repository has already been pulled to the local repository
+#Backs up all the files in the repository except previous backup files
 #Also pushes that backup to github repository
 #Cron job command is in the following two lines:
 #crontab -e vim
@@ -14,22 +16,22 @@ gitUser=$3
 gitPass=$4
 date=$(date +%Y%m%d%H)
 
-#if not a backup file
-#access all files in directory and sub-directories, pipe to tar commans
-#access current date and time
-#backup=backupYYYYMMDDHH.tgz
-#compress all files into backup
-tar czvf backup$date
-echo Back up ${backup} created successfully!
+#Stores file name to back up
+backup=backup$date.tgz
+#compress all files into backup excluding any previous backup files
+tar czvf $backup $1 --exclude=backup*.tgz >> backupsLog 
+echo Backup ${backup} created successfully!
+
+#moves the backup created, into git local repository folder given by user
+#changes directory to the local repository for push
+mv $backup $folder
+cd $folder
 
 #commit backup to local repository
-git commit -m 'something' --all #?
-echo Backup ${backup} commmitted to the local git repository
+git add $backup >> backupLog
+git commit -m $backup >> backupLog
+echo Backup ${backup} committed to the local git repository
 
 #push backup to remote repository
-git push url -all #?
-#get repository name from url=repository
-#dirname command gets directory name off a path
-#s=${url##*/}
-#repository=$(echo ${s%.*}
-echo Backup ${backup} pushed to the remote git repository ${repository}
+git push https://${gitUser}:${gitPass}@${gitURL} --all >> backupLog
+echo Backup ${backup} pushed to the remote git repository $folder
