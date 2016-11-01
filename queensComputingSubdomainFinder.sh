@@ -1,5 +1,8 @@
 #!/bin/bash
 
+#Luisa Aimoli 10169687
+#Braedan Robinson 10188414
+#Question 5 Assignment 2
 #For Windows. Command for finding corresponding IPs and Domains presented in class does not work iin Linux
 #Question 4 for Assignment 2
 #Loops through Queen's IP addresses starting from 130.15.0.0 until 130.15.255.255 and prints out all the IP addresses along with the names of all cs.queensu.ca subdomains
