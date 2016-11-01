@@ -2,6 +2,7 @@ i#!/bin/bash
 
 #Question 5 Assignment 2
 #Adds firewall rules
+#PS. First two functions write directly to files!
 
 #Deletes all previous rules in a table
 delete () {
